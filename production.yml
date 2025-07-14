@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    container_name: apiMuizi_web_prod
+    restart: always
+    command: bash compose/production/entrypoint.sh
+    env_file:
+      - .env.production
+    ports:
+      - "8001:8000"
+    volumes:
+      - .:/code
+      - ./staticfiles:/code/staticfiles
+      - ./media:/code/media
+      - ./db:/code/db

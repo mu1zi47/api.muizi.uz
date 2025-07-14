@@ -27,6 +27,10 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://api.muizi.uz",
+]
+
 SPECTACULAR_SETTINGS = {
     'TITLE': 'mu1zi47 API',
     'DESCRIPTION': '',

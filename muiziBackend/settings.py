@@ -4,11 +4,10 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-6cer=l&qlbzukd#+je*i%d)u0)r6t8e($^j9xc4(0xjl(4m(ko'
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
 
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 

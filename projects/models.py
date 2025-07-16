@@ -10,7 +10,7 @@ class Technology(models.Model):
 class Projects(models.Model):
     name = models.CharField('Имя Проекта', max_length=255)
     link = models.URLField('Ссылка')
-    description = models.CharField('Описание', max_length=100, blank=True, default="")
+    description = models.CharField('Описание', max_length=255, blank=True, default="")
     image = models.ImageField('Фотография', upload_to='projects/')
     
     # здесь связь многие-ко-многим

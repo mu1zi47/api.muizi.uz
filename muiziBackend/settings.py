@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',  # <- ДО rest_framework
     'rest_framework',
     'drf_spectacular',
     'projects',
@@ -40,7 +41,14 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
 }
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://muizi.uz",
+    "https://mu1zi47.uz",
+]
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # <- Должен быть первым!
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

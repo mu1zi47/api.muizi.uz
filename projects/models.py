@@ -22,3 +22,7 @@ class Projects(models.Model):
 
     def __str__(self):
         return self.name
+    
+class skills(models.Model):
+    name = models.CharField('Имя Скила', max_length=255)
+    level = models.CharField('Уровень', max_length=255)

@@ -13,6 +13,7 @@ urlpatterns = [
 
 
     path('api/', include('projects.urls')), 
+    path('api/', include('contacts.urls')), 
 ]
 
 if settings.DEBUG:

@@ -4,13 +4,13 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = os.environ.get("DEBUG", "False") == "True"
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
+# DEBUG = os.environ.get("DEBUG", "False") == "True"
+# ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
 
-# SECRET_KEY = 'django-insecure-6cer=l&qlbzukd#+je*i%d)u0)r6t8e($^j9xc4(0xjl(4m(ko'
-# DEBUG=True
-# ALLOWED_HOSTS = []
+SECRET_KEY = 'django-insecure-6cer=l&qlbzukd#+je*i%d)u0)r6t8e($^j9xc4(0xjl(4m(ko'
+DEBUG=True
+ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
@@ -20,14 +20,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',  # <- ДО rest_framework
+    'corsheaders',
     'rest_framework',
     'drf_spectacular',
     'projects',
+    'contacts',
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_THROTTLE_RATES": {
+        "post_only": "1/hour",
+    }
 }
 
 CSRF_TRUSTED_ORIGINS = [

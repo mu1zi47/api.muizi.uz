@@ -16,5 +16,5 @@ class TechnologyAdmin(admin.ModelAdmin):  # ✅ другое имя
 
 @admin.register(skills)
 class SkillsAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'level']
+    list_display = ['id', 'name', 'level', 'link']
     ordering = ['id']

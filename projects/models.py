@@ -26,3 +26,4 @@ class Projects(models.Model):
 class skills(models.Model):
     name = models.CharField('Имя Скила', max_length=255)
     level = models.CharField('Уровень', max_length=255)
+    link = models.URLField('Ссылка')

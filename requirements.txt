@@ -26,6 +26,7 @@ pillow==11.3.0
 propcache==0.3.2
 pydantic==2.11.7
 pydantic_core==2.33.2
+python-decouple==3.8
 PyYAML==6.0.2
 referencing==0.36.2
 rpds-py==0.26.0

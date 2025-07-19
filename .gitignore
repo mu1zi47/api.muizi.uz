@@ -1,5 +1,6 @@
 db.sqlite3
-.env.production
-.env.local
+# Игнорируем все env файлы
+.env
+.env.*
 *.pyc
 __pycache__/

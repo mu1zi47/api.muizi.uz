@@ -2,6 +2,8 @@ from rest_framework import generics, permissions
 from rest_framework.throttling import AnonRateThrottle
 from .models import Message
 from .serializers import MessageSerializer
+from asgiref.sync import async_to_sync  # ✅ добавляем для вызова async-функции
+from bot.notifications import send_message_notification  # ✅ импортируем нашу функцию
 
 
 # Ограничиваем только POST-запросы
@@ -23,6 +25,12 @@ class MessageCreateAPIView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         message = serializer.save()
+        async_to_sync(send_message_notification)(
+            message.name,
+            message.telegramUser,
+            message.message
+        )
+
         # Здесь можешь отправлять уведомление в Telegram/email
         # async_to_sync(send_message_notification)(message)
 

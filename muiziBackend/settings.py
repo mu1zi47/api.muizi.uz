@@ -49,6 +49,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://muizi.uz",
     "https://mu1zi47.uz",
+    "https://mu1zi47.vercel.app",
 ]
 
 MIDDLEWARE = [

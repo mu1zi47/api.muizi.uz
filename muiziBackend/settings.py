@@ -15,6 +15,7 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost").split(",")
 
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +53,14 @@ CORS_ALLOWED_ORIGINS = [
     "https://mu1zi47.uz",
     "https://mu1zi47.vercel.app",
 ]
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('uz', 'O\'zbekcha'),
+    ('ru', 'Русский'),
+)
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # <- Должен быть первым!

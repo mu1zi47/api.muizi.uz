@@ -64,6 +64,7 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # <- Должен быть первым!
+    'django.middleware.locale.LocaleMiddleware',  # ✅ важно
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

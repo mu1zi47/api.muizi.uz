@@ -13,7 +13,8 @@ class Projects(models.Model):
     link = models.URLField('Ссылка')
     description = models.CharField('Описание', max_length=255, blank=True, default="")
     image = models.ImageField('Фотография', upload_to='projects/')
-    year = models.DateField('Дата', null=True, blank=True)
+    year = models.CharField('Год', default="")
+    month = models.CharField('Месяц', default="")
 
     # здесь связь многие-ко-многим
     technologies = models.ManyToManyField(Technology, related_name='projects', blank=True)
